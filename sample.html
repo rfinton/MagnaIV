@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Auto Sales Link</title>
+        
+        <link type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/asl.css">
+    </head>
+
+    <body>
+        <div class="container-fluid">
+        	<div class="Imageheader">
+        		<div class="row" style="margin:0;">
+        			<div class="col-xs-4"></div>
+        			<div class="col-xs-4">
+	        			<img class="img-responsive center" height="305px" src="//dl.dropboxusercontent.com/u/14320617/asl/images/notepad1.jpg" alt="notepad" />
+	        		</div>
+	        		<div class="col-xs-4"></div>
+        		</div>
+        		
+        	</div>
+        	
+        	<div class="content center row">
+        		<div class="tagline"><b>Get your free sample!</b></div>
+        	</div>
+        	
+        	<div class="row mainText center" style="padding:0 5px;">
+        		<b>Answer a few questions for us and we'll get your free sample of Auto Sales Link on it's way to you.</b>
+        	</div>
+        	
+        	<form method="post">
+				<div class="content row" style="margin-top:15px;">
+	        		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	        			<label for="firstname">First Name</label><br/>
+	        			<input type="text" class="form-control" id="firstname" name="firstname" value="##firstname##" />
+	        		</div>
+	        		
+	        		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	        			<label for="lastname">Last Name</label><br/>
+	        			<input type="text" class="form-control" id="lastname" name="lastname" value="##lastname##" />
+	        		</div>
+	        	</div>
+	        	
+	        	<div class="content row" style="padding-top:15px;">
+	        		<div class="col-lg-12">
+	        			<label for="position">Your position at the Dealership</label><br/>
+	        			<input type="text" class="form-control lg-input" id="position" name="position" />
+	        		</div>
+	        	</div>
+	        	
+	        	<div class="content row" style="padding-top:15px;">
+	        		<div class="col-lg-12">
+	        			<label for="salespeople">How many Salespeople do you employ at ##Company##?</label><br/>
+	        			<input type="text" class="form-control lg-input" id="salespeople" name="salespeople" />
+	        		</div>
+	        	</div>
+	        	
+	        	<div class="content row" style="padding-top:15px;">
+	        		<div class="col-lg-12">
+	        			<label for="salesmanager">How many Sales Managers do you employ at ##Company##?</label><br/>
+	        			<input type="text" class="form-control lg-input" id="salesmanager" name="salesmanager" />
+	        		</div>
+	        	</div>
+	        	
+	        	<div class="content row" style="padding-top:15px;">
+	        		<div class="col-lg-12">
+	        			<label for="system">Do you utilize a CRM or BDC system at ##Company##?</label>
+	        		</div>
+	        		
+	        		<div class="col-lg-3">
+	        			<select class="form-control" id="system" name="system">
+	        				<option>Yes</option>
+	        				<option>No</option>
+	        			</select>
+	        		</div>
+	        	</div>
+	        	
+	        	<div class="content row" style="padding-top:15px;">
+	        		<div class="col-lg-12">
+	        			<label for="salesentry">Are your salespeople responsible for entering fresh prospects in your data system?</label>
+	        		</div>
+	        		
+	        		<div class="col-lg-3">
+	        			<select class="form-control" id="salesentry" name="salesentry">
+	        				<option>Yes</option>
+	        				<option>No</option>
+	        			</select>
+	        		</div>
+	        	</div>
+	        	
+	        	<div class="content row" style="padding-top:15px;">
+	        		<div class="col-lg-12">
+	        			<label for="percentage">What percentage actually get entered into your data system?</label><br/>
+	        		</div>
+	        		
+	        		<div class="col-lg-3">
+	        			<input type="number" step="1" min="0" max="100" class="form-control" id="percentage" name="percentage" value="0" />
+	        		</div>
+	        		
+	        		<div class="alert alert-danger hidden col-lg-9" style="padding:5px;">
+					    <strong>This field only accepts numbers.</strong>
+					</div>
+	        	</div>
+	        	
+	        	<div class="content row" style="padding-top:15px;">
+	        		<div class="center col-lg-6">
+	        			<img src="//dl.dropboxusercontent.com/u/14320617/asl/images/aslLogo.jpg" alt="logo" />
+	        		</div>
+	        		<div class="center col-lg-6">
+	        			<input type="submit" class="btn btn-success" style="width:50%; margin:15px auto;" value="Submit">
+	        		</div>
+	        	</div>
+        	</form>
+        	
+        	<div class="content row" style="margin:15px auto 40px auto;">
+        		<div class="center mainText col-lg-12">
+        			<b><em>All franchise dealerships are approved for 30 day billing</em></b>
+        		</div>
+        	</div>
+		</div>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    	<script> //validate number field
+			$('#percentage').on('blur', function(){
+				var ex = new RegExp(/\d/);
+				var result = ex.test(($('#percentage').val()));
+				
+				if(!result) {
+					$('.alert').removeClass('hidden');
+				}
+				else {
+					$('.alert').addClass('hidden');
+				}
+			});	
+		</script>
+    </body>
+</html>

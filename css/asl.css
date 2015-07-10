@@ -1,0 +1,97 @@
+.container-fluid {
+	padding: 0;
+}
+
+.content {
+	width: 670px;
+	margin: auto;
+}
+
+.padded {
+	padding: 0 15px;
+}
+
+.email {
+	width: 300px;
+}
+
+.lg-input {
+	width: 60%;
+}
+
+#quantity {
+	width: 50px;
+}
+
+label {
+	color: #292827;
+}
+
+.Imageheader {
+	background: url("//dl.dropboxusercontent.com/u/14320617/asl/images/ImageHeader.jpg") no-repeat left top;
+	background-size: cover;
+	width: 100%;
+	border-bottom: solid 5px black;
+}
+
+.mainText {
+	font-size: 115%;
+}
+
+.mantlepiece {
+	width: 35%;
+}
+
+.center {
+	text-align: center;
+	margin: auto;
+}
+
+.tagline {
+	font-style: italic;
+	color: #59bb53;
+	margin: 0.5em auto;
+	font-size: 3em;
+	line-height: 36pt;
+}
+
+.whiteHead {
+	font-weight: bold;
+	font-size: 2.2em;
+	color: white;
+	font-style: italic;
+}
+
+.greenHead {
+	font-style: italic;
+	color: #59bb53;
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 320px) and (max-width: 720px) {
+    .content {
+    	width: 95%;
+    }
+    
+    .tagline {
+    	font-size: 1.5em;
+    	line-height: 1.5em;
+    }
+    
+    input[type="text"], #state {
+    	width: 90%;
+    }
+    
+    .whiteHead {
+    	font-size: 150%;
+    }
+}
