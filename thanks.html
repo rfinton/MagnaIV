@@ -32,7 +32,7 @@
     				<b><span class="message"> </span></b>
         		</div>
         		
-        		<div class="content row" style="margin:80px auto 80px auto;">
+        		<div class="content row" style="margin:120px auto 80px auto;">
         			<div class="center col-xs-12 col-sm-12 col-md-12 col-lg-12">
         				<img src="//dl.dropboxusercontent.com/u/14320617/asl/images/aslLogo.jpg" alt="logo" />
         			</div>
@@ -42,15 +42,32 @@
         
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script>
-        	(function(){
-        		if(document.referrer.contains('sample')){
-        			$('.message').html("Your request has been received. An email confirmation has been sent to ##email## and your free samples are on the way.");
-        		}
-        		else {
-        			$('.message').html("Your order has been placed. An email confirmation has been sent to ##email##. <br/>We appreciate your business!");
-        		}
-        	})();
+		<script id="checkCookie">
+			try {
+				var cookies = document.cookie.split(";");
+				var expression = /.*type.*/;
+				var getType = function() {
+					for( x in cookies ) {
+						if( expression.test(cookies[x]) ) {
+							return cookies[x].substring(6);
+						}
+					}
+				};
+
+				var type = getType();
+
+				(function(){
+					if( type == 'sample' ){
+						$('.message').html("Your request has been received. An email confirmation has been sent to ##email## and a representative will contact you as soon as administratively possible.");
+					}
+					else {
+						$('.message').html("Your order has been placed. An email confirmation has been sent to ##email## and a representative will contact you as soon as administratively possible. <br/>We appreciate your business!");
+					}
+				})();
+			}
+			catch(error) {
+				alert(error);
+			}
         </script>
     </body>
 </html>

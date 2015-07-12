@@ -124,7 +124,7 @@
         
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    	<script> //validate number field
+    	<script id="number_validate"> 
 			$('#percentage').on('blur', function(){
 				var ex = /^([0-9]+)$/;
 				var result = ex.test(($('#percentage').val()));
@@ -135,7 +135,24 @@
 				else {
 					$('.alert').addClass('hidden');
 				}
-			});	
+			});
+		</script>
+		<script id="setCookie">
+			try {
+				var url = window.location.toString();
+				var expression = /.*sample.*/;
+				var result = expression.test(url);
+
+				if(result) {
+					document.cookie = "type=sample";
+				}
+				else {
+					document.cookie = "type=order";
+				}
+			}
+			catch(error){
+				alert(error);
+			}
 		</script>
     </body>
 </html>

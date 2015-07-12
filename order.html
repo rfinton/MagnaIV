@@ -61,8 +61,8 @@
 	        	
 	        	<div class="content row" style="padding-top:15px;">
 	        		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-	        			<label for="dealership">Dealership Name</label><br/>
-	        			<input type="text" class="form-control" id="dealership" name="dealership" />
+	        			<label for="company">Dealership Name</label><br/>
+	        			<input type="text" class="form-control" id="company" name="company" value="##company##" />
 	        		</div>
 	        		
 	        		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -73,8 +73,8 @@
 	        	
 	        	<div class="content row" style="padding-top:15px;">
 	        		<div class="col-lg-12">
-	        			<label for="shippingAddress">Shipping Address (no P.O. Boxes)</label><br/>
-	        			<input type="text" class="form-control" id="shippingAddress" name="shippingAddress" />
+	        			<label for="address1">Shipping Address (no P.O. Boxes)</label><br/>
+	        			<input type="text" class="form-control" id="address1" name="address1" value="##address1##"/>
 	        		</div>
 	        	</div>
 	        	
@@ -170,5 +170,22 @@
         
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script id="setCookie">
+			try {
+				var url = window.location.toString();
+				var expression = /.*sample.*/;
+				var result = expression.test(url);
+
+				if(result) {
+					document.cookie = "type=sample";
+				}
+				else {
+					document.cookie = "type=order";
+				}
+			}
+			catch(error){
+				alert(error);
+			}
+		</script>
     </body>
 </html>
